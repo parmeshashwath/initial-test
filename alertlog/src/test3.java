@@ -71,9 +71,9 @@ public class test3
 				
 			
 			br = new BufferedReader(new FileReader("C:/Users/parma/Desktop/AZAD/project1/data/alert_CG1PRD1.log"));
-				//br = new BufferedReader(new FileReader("C:/input.txt"));
+				//br = new BufferedReader(new FileReader("C:/input_e.txt"));
 				//FileOutputStream f = new FileOutputStream("C:/output.txt");
-			FileWriter fw = new FileWriter("C:/output1.txt");
+			FileWriter fw = new FileWriter("C:/outputt.txt");
 			bw = new BufferedWriter(fw);
 			FileWriter fw1 = new FileWriter("C:/oraerrors.txt");
 			bw1 = new BufferedWriter(fw1);
@@ -82,18 +82,18 @@ public class test3
 				//System.out.println(sCurrentLine);
 				StringTokenizer tokn = new StringTokenizer(sCurrentLine, ": ");
 				
-				if(tokn.countTokens()>2 && days.contains(tokn.nextToken()) && months.contains(tokn.nextToken()) && Integer.parseInt(tokn.nextToken())>=15)
+				if(tokn.countTokens()>2 && days.contains(tokn.nextToken()) && months.contains(tokn.nextToken()))
 				{
 					
 					tempstr=sCurrentLine;
-					//System.out.println(tempstr);
+					System.out.println(tempstr);
 				//	continue;
 					br.mark(1000);
 					while ((sCurrentLine = br.readLine()) != null) {
 						
 						StringTokenizer tokn1 = new StringTokenizer(sCurrentLine, ": ");
 						
-						if(tokn1.countTokens()>2 && days.contains(tokn1.nextToken()) && months.contains(tokn1.nextToken()) && Integer.parseInt(tokn.nextToken())>=15)
+						if(tokn1.countTokens()>2 && days.contains(tokn1.nextToken()) && months.contains(tokn1.nextToken()))
 						{
 							//System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 							br.reset();
@@ -102,7 +102,7 @@ public class test3
 						StringTokenizer tokn2 = new StringTokenizer(sCurrentLine, ": ");
 				while (tokn2.hasMoreTokens()) {
 					temp=tokn2.nextToken();
-					//System.out.println(temp);
+					System.out.println(temp);
 					wordList.add(temp);
 					}
 				br.mark(1000);
@@ -116,6 +116,7 @@ public class test3
 msg="in file description::"+" ";
 						flag=0;
 Iterator<String> itr=wordList.iterator();
+//System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 tempi=itr.next();
 				while(itr.hasNext())
 				{
@@ -238,7 +239,7 @@ tempi=itr.next();
 				//System.out.println(flag);
 					if(flag==1)
 					{
-						tempr=tempstr+" "+n1+" " +" "+description+" "+sever+ " "+cnt + " "+msg ;
+						tempr=tempstr+"*"+n1+"*"+description+"*"+sever+ "*"+cnt + "*"+msg ;
 						//System.out.println(tempr);
 						bw.write(tempr);
 						bw.write('\n');
