@@ -70,8 +70,8 @@ public class test3
 			{
 				
 			
-			br = new BufferedReader(new FileReader("C:/Users/parma/Desktop/AZAD/project1/data/alert_CG1PRD1.log"));
-				//br = new BufferedReader(new FileReader("C:/input_e.txt"));
+			//br = new BufferedReader(new FileReader("C:/Users/parma/Desktop/AZAD/project1/data/alert_CG1PRD1.log"));
+				br = new BufferedReader(new FileReader("C:/input_e.txt"));
 				//FileOutputStream f = new FileOutputStream("C:/output.txt");
 			FileWriter fw = new FileWriter("C:/outputt.txt");
 			bw = new BufferedWriter(fw);
